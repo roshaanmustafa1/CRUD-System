@@ -8,9 +8,10 @@ function Read() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users/" + id)
+      .get(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((res) => {
         setData(res.data);
+        console.log(res);
       })
       .catch((err) => {
         console.error(err);

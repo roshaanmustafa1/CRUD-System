@@ -6,7 +6,7 @@ function Home() {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users")
+      .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
         setData(res.data);
       })
@@ -18,7 +18,7 @@ function Home() {
   const handleDelete = (e, id) => {
     e.preventDefault();
     axios
-      .delete("http://localhost:3000/users/" + id)
+      .delete(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((res) => {
         console.log(res);
         setData(data.filter((user) => user.id !== id));

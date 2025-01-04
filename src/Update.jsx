@@ -16,7 +16,7 @@ function Update() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users/" + id)
+      .get(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((res) => {
         setValues(res.data);
       })
@@ -27,7 +27,7 @@ function Update() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3000/users/" + id, values)
+      .put(`https://jsonplaceholder.typicode.com/users/${id}`, values)
       .then((res) => {
         console.log(res);
         navigate("/");

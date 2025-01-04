@@ -14,7 +14,7 @@ function Create() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/users", values)
+      .post("https://jsonplaceholder.typicode.com/users", values)
       .then((res) => {
         console.log(res);
         navigate("/");
@@ -35,6 +35,7 @@ function Create() {
           className="d-flex px-3 py-3  border-0 shadow form-control"
           onChange={(e) => setValues({ ...values, name: e.target.value })}
           name="name"
+          value={values.name}
         />
         <input
           type="text"
@@ -42,6 +43,7 @@ function Create() {
           className="d-flex px-3 py-3  border-0 shadow form-control"
           onChange={(e) => setValues({ ...values, username: e.target.value })}
           name="username"
+          value={values.username}
         />
         <input
           type="email"
@@ -49,6 +51,7 @@ function Create() {
           className="d-flex px-3 py-3  border-0 shadow form-control"
           onChange={(e) => setValues({ ...values, email: e.target.value })}
           name="email"
+          value={values.email}
         />
         <input
           type="number"
@@ -56,6 +59,7 @@ function Create() {
           className="d-flex px-3 py-3  border-0 shadow form-control"
           onChange={(e) => setValues({ ...values, phone: e.target.value })}
           name="phone"
+          value={values.phone}
         />
         <input
           type="text"
@@ -63,6 +67,7 @@ function Create() {
           className="d-flex px-3 py-3  border-0 shadow form-control"
           onChange={(e) => setValues({ ...values, website: e.target.value })}
           name="website"
+          value={values.website}
         />
         <div className="d-flex gap-4">
           <button type="submit" className="btn btn-success px-5 py-2">
